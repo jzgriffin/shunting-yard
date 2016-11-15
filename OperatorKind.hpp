@@ -30,6 +30,7 @@ enum class OperatorKind
     Subtract, // -
     Multiply, // *
     Divide, // /
+    Power, // ^
 };
 
 std::ostream& operator<<(std::ostream& os, OperatorKind rhs);

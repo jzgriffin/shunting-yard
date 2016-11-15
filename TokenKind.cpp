@@ -31,5 +31,6 @@ std::ostream& operator<<(std::ostream& os, TokenKind rhs)
         case TokenKind::Minus: return os << "Minus";
         case TokenKind::Star: return os << "Star";
         case TokenKind::Slash: return os << "Slash";
+        case TokenKind::Caret: return os << "Caret";
     }
 }

@@ -14,6 +14,7 @@
 // SOFTWARE.
 
 #include "Evaluator.hpp"
+#include <cmath>
 #include <stdexcept>
 
 Evaluator::Evaluator(std::deque<Node> nodes)
@@ -68,6 +69,10 @@ void Evaluator::stepOperator(OperatorKind k)
 
         case OperatorKind::Divide:
             stepDivide();
+            break;
+
+        case OperatorKind::Power:
+            stepPower();
             break;
 
         default:
@@ -133,4 +138,19 @@ void Evaluator::stepDivide()
     _operands.pop();
 
     _operands.push(x / y);
+}
+
+void Evaluator::stepPower()
+{
+    if (_operands.size() < 2) {
+        throw std::runtime_error{"Insufficient operands for power"};
+    }
+
+    auto y = _operands.top();
+    _operands.pop();
+
+    auto x = _operands.top();
+    _operands.pop();
+
+    _operands.push(std::pow(x, y));
 }

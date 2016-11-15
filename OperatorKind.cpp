@@ -29,6 +29,7 @@ std::ostream& operator<<(std::ostream& os, OperatorKind rhs)
         case OperatorKind::Subtract: return os << "Subtract";
         case OperatorKind::Multiply: return os << "Multiply";
         case OperatorKind::Divide: return os << "Divide";
+        case OperatorKind::Power: return os << "Power";
     }
 }
 
@@ -65,6 +66,7 @@ bool isOperatorArithmetic(OperatorKind k)
         case OperatorKind::Subtract:
         case OperatorKind::Multiply:
         case OperatorKind::Divide:
+        case OperatorKind::Power:
             return true;
 
         default:

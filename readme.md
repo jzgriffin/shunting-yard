@@ -29,3 +29,4 @@ Presently, the implementation supports the following operations:
   3.  Subtraction
   4.  Multiplication
   5.  Division
+  6.  Power

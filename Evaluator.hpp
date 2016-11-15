@@ -38,6 +38,7 @@ private:
     void stepSubtract();
     void stepMultiply();
     void stepDivide();
+    void stepPower();
 };
 
 #endif // hpp_ShuntingYard_Evaluator

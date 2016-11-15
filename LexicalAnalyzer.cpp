@@ -134,6 +134,7 @@ std::optional<Token> LexicalAnalyzer::getPunctuation()
         case '-': return makeToken(TokenKind::Minus);
         case '*': return makeToken(TokenKind::Star);
         case '/': return makeToken(TokenKind::Slash);
+        case '^': return makeToken(TokenKind::Caret);
         default: return {};
     }
 }

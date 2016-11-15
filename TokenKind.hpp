@@ -32,6 +32,7 @@ enum class TokenKind
     Minus, // -
     Star, // *
     Slash, // /
+    Caret, // ^
 };
 
 std::ostream& operator<<(std::ostream& os, TokenKind rhs);

@@ -28,6 +28,7 @@ SyntaxAnalyzer::_operatorProps{
     {OperatorKind::Subtract, {OperatorAssoc::Left, 1}},
     {OperatorKind::Multiply, {OperatorAssoc::Left, 2}},
     {OperatorKind::Divide, {OperatorAssoc::Left, 2}},
+    {OperatorKind::Power, {OperatorAssoc::Right, 3}},
 };
 
 SyntaxAnalyzer::SyntaxAnalyzer(LexicalAnalyzer& la)
@@ -65,6 +66,7 @@ bool SyntaxAnalyzer::next()
         case TokenKind::Minus:
         case TokenKind::Star:
         case TokenKind::Slash:
+        case TokenKind::Caret:
             parseOperator(*t);
             return true;
     }
@@ -89,6 +91,7 @@ void SyntaxAnalyzer::parseOperator(const Token& t)
         case TokenKind::Minus: kind = OperatorKind::Subtract; break;
         case TokenKind::Star: kind = OperatorKind::Multiply; break;
         case TokenKind::Slash: kind = OperatorKind::Divide; break;
+        case TokenKind::Caret: kind = OperatorKind::Power; break;
         default:
             throw std::runtime_error{"Token kind is not operator"};
     }
